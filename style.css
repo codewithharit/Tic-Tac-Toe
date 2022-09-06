@@ -1,0 +1,63 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+u {
+    color: rgb(255, 0, 0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+
+body {
+    background: linear-gradient(#fadb2a , #35ec3e);
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+#button {
+    background-color: rgb(200, 255, 252);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    width: 100px;
+    height: 45px;
+}
+
+#div1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#div2 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#div3 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#reset {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.keys {
+    height: 90px;
+    width: 90px;
+    
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: larger;
+
+    justify-content: center;
+    align-items: center;
+}

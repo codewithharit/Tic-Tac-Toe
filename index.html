@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport content=" width=device-width, initial-scale=1.0> 
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" href = "style.css">
+
+    </head>
+    <body>
+        <div>
+            <!-- Coded By Harit  Himanshu -->
+            <h1><u>Tic-Tac-Toe</u></h1>
+           
+
+            <br><br>
+
+            <h1 id="TEST"></h1>
+
+            <br><br><br><br>
+
+            <div id="div1">
+                <br><br>
+
+                <input type="text" onclick="main(); myfunc1();" class="keys" id="1" readonly></input>
+                <input type="text" onclick="main(); myfunc2();" class="keys" id="2" readonly></input>
+                <input type="text" onclick="main(); myfunc3();" class="keys" id="3" readonly></input>
+
+            </div>
+            <div id="div2">
+
+                <br>
+
+                <input type="text" onclick="main(); myfunc4();" class="keys" id="4" readonly></input>
+                <input type="text" onclick="main(); myfunc5();" class="keys" id="5" readonly></input>
+                <input type="text" onclick="main(); myfunc6();" class="keys" id="6" readonly></input>
+
+            </div>
+            <div id="div3">
+
+                <br>
+
+                <input type="text" onclick="main(); myfunc7();" class="keys" id="7" readonly></input>
+                <input type="text" onclick="main(); myfunc8();" class="keys" id="8" readonly></input>
+                <input type="text" onclick="main(); myfunc9();" class="keys" id="9" readonly></input>
+
+                <br><br>
+
+            </div>
+
+            <br><br>
+
+            <div id="reset">
+                <br><br>
+                <button type="text" onclick="reset()" id="button" readonly>RESET</button>
+            </div>
+
+            <script>
+                let player1 = prompt("Enter the name of the first player: ");
+                let player2 = prompt("Enter the name of the second player: ");
+                let player = player1;  
+                let symbol;
+                let win;
+
+                let key1 = document.getElementById("1");
+                let key2 = document.getElementById("2");
+                let key3 = document.getElementById("3");
+                let key4 = document.getElementById("4");
+                let key5 = document.getElementById("5");
+                let key6 = document.getElementById("6");
+                let key7 = document.getElementById("7");
+                let key8 = document.getElementById("8");
+                let key9 = document.getElementById("9");
+
+                let keys = [key1, key2, key3, key4, key5, key6, key7, key8, key9];
+
+                function check() {
+                    if(victory()){
+
+                        window.alert(player + " won !!!");
+                        reset()
+                    }
+
+                    else if(tie()) {
+
+                        window.alert("tie");
+                        reset()
+                    }
+                }
+
+                function main() {
+                    if (player === player1) {
+                        symbol = "X";
+                    }
+                    else {
+                        symbol = "O";
+                    }
+
+                    document.getElementById("TEST").innerHTML = player + " it's your turn";
+
+                    if (player === player1) {
+                        player = player2;
+                    }
+                    else {
+                        player = player1;
+                    }
+                }
+
+                function myfunc1() {
+                    key1.value = symbol;
+                    key1.disabled = true;
+                    check()
+                }
+
+                function myfunc2() {
+                    key2.value = symbol;
+                    key2.disabled = true;
+                    check()
+                }
+
+                function myfunc3() {
+                    key3.value = symbol;
+                    key3.disabled = true;
+                    check()
+                }
+
+                function myfunc4() {
+                    key4.value = symbol;
+                    key4.disabled = true;
+                    check()
+                }
+
+                function myfunc5() {
+                    key5.value = symbol;
+                    key5.disabled = true;
+                    check()
+                }
+
+                function myfunc6() {
+                    key6.value = symbol;
+                    key6.disabled = true;
+                    check()
+                }
+
+                function myfunc7() {
+                    key7.value = symbol;
+                    key7.disabled = true;
+                    check()
+                }
+
+                function myfunc8() {
+                    key8.value = symbol;
+                    key8.disabled = true;
+                    check()
+                }
+
+                function myfunc9() {
+                    key9.value = symbol;
+                    key9.disabled = true;
+                    check()
+                }
+
+                function tie() {
+                    let boxes = 0;
+                    for(let i = 0; i < keys.length; i++) {
+                        if(keys[i].value === "X" || keys[i].value === "O") {
+                            boxes++;
+                        }
+
+                        if(boxes === 9) {
+                            return true;
+                        }
+                    }
+
+                }
+
+                function reset() {
+                    key1.value = " ";
+                    key1.disabled = false;
+
+                    key2.value = " ";
+                    key2.disabled = false;
+
+                    key3.value = " ";
+                    key3.disabled = false;
+
+                    key4.value = " ";
+                    key4.disabled = false;
+
+                    key5.value = " ";
+                    key5.disabled = false;
+
+                    key6.value = " ";
+                    key6.disabled = false;
+
+                    key7.value = " ";
+                    key7.disabled = false;
+
+                    key8.value = " ";
+                    key8.disabled = false;
+
+                    key9.value = " ";
+                    key9.disabled = false;
+                 
+                }
+
+                function victory() {
+                    if(key1.value === key2.value && key2.value === key3.value && (key1.value === "X" || key1.value === "O")) {
+                        win = true;
+                    }
+                    else if(key4.value === key5.value && key5.value === key6.value && (key4.value === "X" || key4.value === "O")) {
+                        win = true;
+                    }
+                    else if(key7.value === key8.value && key8.value === key9.value && (key7.value === "X" || key7.value === "O")) {
+                        win = true;
+                    }
+                    else if(key1.value === key4.value && key4.value === key7.value && (key1.value === "X" || key1.value === "O")) {
+                        win = true;
+                    }
+                    else if(key2.value === key5.value && key5.value === key8.value && (key2.value === "X" || key2.value === "O")) {
+                        win = true;
+                    }
+                    else if(key3.value === key6.value && key6.value === key9.value && (key3.value === "X" || key3.value === "O")) {
+                        win = true;
+                    }
+                    else if(key1.value === key5.value && key5.value === key9.value && (key1.value === "X" || key1.value === "O")) {
+                        win = true;
+                    }
+                    else if(key3.value === key5.value && key5.value === key7.value && (key3.value === "X" || key3.value === "O")) {
+                        win = true;
+                    }
+                    else {
+                        win = false;
+                    }
+
+                    return win;
+                
+                }
+
+                if (player === player1) {
+                    symbol = "X";
+                }
+                else {
+                    symbol = "O";
+                }
+
+                document.getElementById("TEST").innerHTML = player + " it's your turn";
+
+                if (player === player1) {
+                    player = player2;
+                }
+                else {
+                    player = player1;
+                }
+                
+            </script>
+        </div> <br> <br> <br><br>
+        <div>
+            <hr>
+            <a href = "https://github.com/codewithharit"><img src = "git.png" height = "80" , weidth = "70"> </a>
+            <a href = "https://www.youtube.com/channel/UCuulPn_llK3PpK4mA9P6bjQ"><img src = "you.png" height = "80" , weidth = "70" > </a>
+            <a href = "https://www.instagram.com/cyber.octopus/?igshid=YmMyMTA2M2Y%3D"><img src = "insta.png" height = "80" , weidth = "70" > </a>
+            <a href = "https://t.me/cyberoctopus1"><img src = "tele.png"height = "80" , weidth = "70" > </a>
+            
+
+
+
+
+        </div>
+    </body>
+</html>
