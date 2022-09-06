@@ -7,7 +7,7 @@ Let's Play :- https://codewithharit.github.io/Tic-Tac-Toe/
 
 
 
-``
+```
 
 https://codewithharit.github.io/Tic-Tac-Toe/
 
